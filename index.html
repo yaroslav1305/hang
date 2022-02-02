@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <script>
+
+        const words = [
+            'ананас',
+            'банан',
+            'яблуко',
+            'манго'
+        ]
+
+        let word = words[Math.floor(Math.random() * words.length)]
+
+        let answerArray = []
+        for (let i=0; i<word.length; i++) {
+            answerArray[i]="_"
+        }
+        let remainingLetters = word.length
+
+        while (remainingLetters > 0) {
+            alert(answerArray.join(" "))
+            var guess = prompt("Вгадай букву")
+            if (guess == null) {
+                breack
+            }
+            else if (guess.length != 1) {
+                alert("Введить тыльки 1 лытеру")
+            }
+
+
+
+            else {
+                for (var j=0; j< word.length; j++){
+                    if (word[j]===guess){
+                        answerArray[j]=guess
+                        remainingLetters--;
+                    }
+                }
+
+            }
+    
+           
+        }
+        alert(answerArray.join(""))
+            alert("good you win " + word)
+
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
